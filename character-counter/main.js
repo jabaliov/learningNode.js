@@ -2,7 +2,7 @@ const str = process.argv[2];
 const ch = process.argv[3];
 
 // String.prototype.split()
-var count = [...str].filter(x => x === ch).length;
+var count = str.split(ch).length - 1;
 console.log(count);
 
 // Array.prototype.filter()
