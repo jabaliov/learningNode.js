@@ -1,2 +1,4 @@
-# learningNode.js
-# learning Node.js
+# الوصف
+مجموعة من الأمور المفيدة لمن يريد تعلم
+
+node.js
