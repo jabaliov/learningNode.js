@@ -75,7 +75,7 @@ node main.js test
 ```
 
 ## المخرج
-```bash
+```
 ----- ES6 | forEach -----
 [t][e][s][t]
 ----- ES6 | map -----
