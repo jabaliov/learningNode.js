@@ -1,16 +1,17 @@
-console.log(process.argv[2]);
+const str = process.argv[2]? process.argv[2] : 'test';
 const lineBreak = "-----";
 const verticalBar = "|";
+
 // With ES6
 console.log(lineBreak, 'ES6', verticalBar, 'forEach', lineBreak);
 let text = "";
-[...process.argv[2]].forEach(letter => text += '[' + letter + ']');
+[...str].forEach(letter => text += '[' + letter + ']');
 console.log(text);
 
 // ES6 map
 console.log(lineBreak, 'ES6', verticalBar, 'map', lineBreak);
 text = "";
-process.argv[2].split('').map(letter => {
+str.split('').map(letter => {
     text += '[' + letter + ']';
 });
 console.log(text);
@@ -18,30 +19,30 @@ console.log(text);
 // ES6 version. map
 console.log(lineBreak, 'ES6', verticalBar, '...', verticalBar, 'map', lineBreak);
 text = "";
-text = [...process.argv[2]].map(letter => '[' + letter + ']');
+text = [...str].map(letter => '[' + letter + ']');
 console.log(...text);
 console.log(text.join(''));
 
-// With the `of` operator
+// for ... of
 console.log(lineBreak, 'for of', lineBreak);
 text = "";
-for (const letter of process.argv[2]) {
+for (const letter of str) {
     text += '[' + letter + ']';
 }
 console.log(text);
 
-// With ES5
-console.log(lineBreak, 'ES6', verticalBar, 'for', lineBreak);
+// for
+console.log(lineBreak, 'for', verticalBar, 'charAt', lineBreak);
 text = "";
-for (var i = 0, letter = ''; letter = process.argv[2].charAt(i); i++) {
+for (var i = 0, letter = ''; letter = str.charAt(i); i++) {
     text += '[' + letter + ']';
 }
 console.log(text);
 
-// ES5 without the for loop:
-console.log(lineBreak, 'forEach', lineBreak);
+// split -> forEach
+console.log(lineBreak, 'split', verticalBar, 'forEach', lineBreak);
 text = "";
-process.argv[2].split('').forEach(function (letter) {
+str.split('').forEach(function (letter) {
     text += '[' + letter + ']';
 });
 console.log(text);
@@ -49,7 +50,7 @@ console.log(text);
 // for ... in
 console.log(lineBreak, 'for in', lineBreak);
 text = "";
-for (var letterIndex in process.argv[2]) {
-    text += '[' + process.argv[2][letterIndex]+ ']';
+for (var letterIndex in str) {
+    text += '[' + str[letterIndex]+ ']';
 }
 console.log(text);
