@@ -2,9 +2,15 @@ const str = process.argv[2]? process.argv[2] : 'test';
 const lineBreak = "-----";
 const verticalBar = "|";
 
+// With ES6 with backtick `
+console.log(lineBreak, 'ES6', verticalBar, 'forEach with backtick', lineBreak);
+let text = "";
+[...str].forEach(letter => text += `[${letter}]`);
+console.log(text);
+
 // With ES6
 console.log(lineBreak, 'ES6', verticalBar, 'forEach', lineBreak);
-let text = "";
+text = "";
 [...str].forEach(letter => text += '[' + letter + ']');
 console.log(text);
 
